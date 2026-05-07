@@ -4,11 +4,11 @@
 
 - Login: [aws.amazon](https://aws.amazon.com/free/) 
 
-![sign up to console](../Images/awsaccount1.1.png)
+![sign up to console](../Images/aws-login1.png)
 
 - click on `Sign in using root user email`(as shownin in below image) 
 
-![aws root user login page](../Images/awsaccount2.png)
+![aws root user login page](../Images/aws-login2.png)
 
 # Import SSH Key(Public key) to AWS Account (for EC2 launch)
 
