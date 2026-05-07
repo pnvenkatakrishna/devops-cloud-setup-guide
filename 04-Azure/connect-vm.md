@@ -1,14 +1,24 @@
 # How to Configure Locally Generated SSH Keys for Azure Linux VMs on Windows
 
 **Generate SSH Key Pair on Windows**  
-Open PowerShell or Command Prompt on Windows (OpenSSH is built-in on Windows 10+). Run `ssh-keygen -t ed25519 -C "your_email@example.com"` to create a key pair; accept defaults or specify `C:\Users\YourUser\.ssh\id_ed25519` for the path. This generates `id_ed25519` (private) and `id_ed25519.pub` (public) files—keep the private key secure and never share it. [docs.aws.amazon](https://docs.aws.amazon.com/transfer/latest/userguide/windows-ssh.html)
+Open PowerShell or GitBash on Windows (OpenSSH is built-in on Windows 10+). 
+   * Run `ssh-keygen` to create a key pair; accept defaults or specify `C:\Users\YourUser\.ssh\id_ed25519` for the path. 
+   
+   * This generates `id_ed25519` (private) and `id_ed25519.pub` (public) files—keep the private key secure and never share it. [docs.aws.amazon](https://docs.aws.amazon.com/transfer/latest/userguide/windows-ssh.html)
 
 **Create or Update Azure Linux VM with Your Public Key**  
-In the Azure Portal, create a new Linux VM (e.g., Ubuntu) and select "SSH public key" under Administrator account. Paste the contents of your local `id_ed25519.pub` file (starts with `ssh-ed25519`) into the SSH public key field, along with your desired username like `azureuser`. [learn.microsoft](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows)
+In the Azure Portal, create a new Linux VM (e.g., Ubuntu) and select "SSH public key" under Administrator account. 
+   * Paste the contents of your local `id_ed25519.pub` file (starts with `ssh-ed25519`) into the SSH public key field, along with your desired username like `azureuser`. [learn.microsoft](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows)
 
+
+### **NOTE**
 **Connect to the VM Securely**  
-Ensure port 22 is open in the VM's Network Security Group (NSG). From PowerShell, run `ssh azureuser@<VM-Public-IP>` or `ssh -i C:\.ssh\id_ed25519 azureuser@<VM-Public-IP>`. **The first connection adds the host key**; subsequent ones use your private key for passwordless authentication.
 
+* From PowerShell, run `ssh azureuser@<VM-Public-IP>` or `ssh -i C:\.ssh\id_ed25519 azureuser@<VM-Public-IP>`. 
+
+* **The first connection adds the host key**; subsequent ones use your private key for passwordless authentication.
+
+* Ensure port 22 is open in the VM's Network Security Group (NSG).
 
 # Steps to Import SSH Public Key via Azure Portal
 

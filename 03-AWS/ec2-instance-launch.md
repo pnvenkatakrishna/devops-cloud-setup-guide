@@ -1,4 +1,4 @@
-## How to Launch AWS Ubuntu Instance with Imported Key
+## How to Launch AWS **Ubuntu** Instance with **Imported Key**
 
 1. Open AWS Management Console and go to EC2 Dashboard.
 
@@ -14,42 +14,39 @@
 
 ![choosing instance type](../Images/ec2aws3.png)
 
-5. Click **Next** to configure instance details as needed.
-
-6. In the **Key Pair** section, select the imported SSH key pair from the dropdown.
+5. In the **Key Pair** section, select the imported SSH key pair from the dropdown.
 
 ![selecting import keypair](../Images/ec2aws4.png)
 
-7. Configure security group to allow SSH (port 22) access from your IP address.
+6. Configure security group to allow SSH (port 22) access from your IP address.
 
-8. Review and click **Launch** to start the instance.
+7. Review and click **Launch** to start the instance.
 
 ![launching instance](../Images/ec2aws5.png)
 
-9. Wait for the instance to enter the "running" state.
+8. Wait for the instance to enter the "running" state.
 
-10. Note the public IP address of the instance for SSH access.
+9. Note the public IP address of the instance for SSH access.
 
 ![Launching instance](../Images/ec2aws6.png)
 
-11. To connect to Instance, Open Terminal and run the command
+10. To connect to Instance, Open Terminal and run the command
 
 **From PowerShell (Windows Default)**
-```
+```bash
 # Simple - uses default ~/.ssh/id_ed25519 automatically
 ssh ubuntu@43.204.98.223
 
 # Explicit key path (run from .ssh folder or use full path)
 ssh -i .\.ssh\id_ed25519 ubuntu@43.204.98.223
 ```
-
-**From WSL/Bash (Your Linux Terminal)**
-```
-# Simple - auto-detects ~/.ssh/id_ed25519
+**From Git Bash**
+```bash
+# Simple - uses default ~/.ssh/id_ed25519 automatically
 ssh ubuntu@43.204.98.223
 
-# Explicit key specification
-ssh -i ~/.ssh/id_ed25519 ubuntu@43.204.98.223
+# Explicit key path (run from .ssh folder or use full path)
+ssh -i .ssh/id_ed25519 ubuntu@43.204.98.223
 ```
 
 **Key Benefits**
