@@ -26,7 +26,6 @@ This repository provides a structured, step-by-step path for setting up a comple
   - [📂 05-Terraform](#-05-terraform)
   - [📂 06-Docker](#-06-docker)
   - [📂 07-Python](#-07-python)
-- [🛣️ DevOps Learning Roadmap](#️-devops-learning-roadmap)
 - [🔄 Repository Updates](#-repository-updates)
 - [📖 Official Documentation](#-official-documentation)
 - [💡 Tips for Students](#-tips-for-students)
@@ -215,35 +214,6 @@ Learn Python for DevOps and Automation.
 
 ---
 
-# 🛣️ DevOps Learning Roadmap
-
-```text
-System Setup
-      ↓
-Git & GitHub
-      ↓
-Linux
-      ↓
-Python
-      ↓
-AWS & Azure
-      ↓
-Terraform
-      ↓
-Docker
-      ↓
-Kubernetes
-      ↓
-Jenkins
-      ↓
-Monitoring
-      ↓
-CI/CD
-      ↓
-DevOps Projects
-```
-
----
 
 # 🔄 Repository Updates
 
